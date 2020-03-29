@@ -30,3 +30,8 @@ organization       0.73      0.79      0.76       367
    micro avg       0.74      0.79      0.77      3072
    macro avg       0.75      0.79      0.77      3072
 ```
+
+### predict
+run the demo_predict.py
+
+![predict](./images/predict.png)
