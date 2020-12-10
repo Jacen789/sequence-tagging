@@ -58,7 +58,7 @@ def train(hparams):
     # optimizer
     optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate, weight_decay=weight_decay)
     running_loss = 0.0
-    writer = SummaryWriter(os.path.join(log_dir, time.strftime("%Y-%m-%d_%H:%M:%S", time.localtime())))
+    writer = SummaryWriter(os.path.join(log_dir, time.strftime("%Y-%m-%d_%H-%M-%S", time.localtime())))
 
     for epoch in range(epoch_offset, epochs):
         print("Epoch: {}".format(epoch))

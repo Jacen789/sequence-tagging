@@ -32,7 +32,7 @@ class BertBilstmCrf(nn.Module):
         self.crf = CRF(num_tags=self.tagset_size)
 
     def _get_emission_scores(self, input_ids, token_type_ids=None, attention_mask=None):
-        embeds = self.bert_model(input_ids, token_type_ids=token_type_ids, attention_mask=attention_mask)[0]
+        embeds = self.bert_model(input_ids, token_type_ids=token_type_ids, attention_mask=attention_mask, return_dict=False)[0]
         lstm_out, _ = self.lstm(embeds)
         lstm_dropout = self.drop(lstm_out)
         emissions = self.hidden2tag(lstm_dropout)
